@@ -1,0 +1,337 @@
+<!DOCTYPE html><html lang="lt" data-refpop="{&#34;open&#34;:&#34;Atverti konspekte →&#34;,&#34;goto&#34;:&#34;Eiti ten →&#34;,&#34;loading&#34;:&#34;Įkeliama…&#34;,&#34;failed&#34;:&#34;Šios nuorodos įkelti nepavyko.&#34;}"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Mokytis su DI · Kvantinė mechanika I</title><meta name="description" content="DI asistentas paaiškins bet ką bet kuriuo paros metu – ir lygiai taip pat noriai galvos už jus, o būtent taip neišlaikomi egzaminai. Naudokitės juo pirmuoju būdu: pasirinkite skyrelį žemiau ir gaukite užklausą, kuri priverčia jį paaiškinti ir tada grąžinti darbą jums."><link rel="icon" href="/quantum/favicon.svg"><link rel="alternate" hreflang="lt" href="/quantum/ai"><link rel="alternate" hreflang="en" href="/quantum/en/ai"><script>
+      // Applied before first paint, so the page never flashes the wrong theme.
+      (function () {
+        try {
+          var t = localStorage.getItem("quantum1-theme");
+          if (t) document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script><link rel="stylesheet" href="/quantum/_astro/about.ih5Z-W4c.css"></head> <body>   <div class="board" aria-hidden="true"><div class="board-ink"></div></div> <script>
+      // Fade the board out over the first 60% of a screen of scrolling.
+      (function () {
+        var board = document.querySelector(".board"), frame = 0;
+        if (!board) return;
+        function update() {
+          frame = 0;
+          board.style.opacity = String(Math.max(0, 1 - window.scrollY / (window.innerHeight * 0.6)));
+        }
+        window.addEventListener("scroll", function () {
+          if (!frame) frame = requestAnimationFrame(update);
+        }, { passive: true });
+        update();
+      })();
+    </script> <a class="skip-link" href="#main">Pereiti prie turinio</a> <header class="site-header"> <div class="wrap bar">  <a class="brand" href="/quantum/">Kvantinė mechanika I</a> <nav class="site-nav">  <div class="nav-links"> <a href="/quantum/"> Paskaitos </a><a href="/quantum/problems"> Uždaviniai </a><a href="/quantum/review"> Kartojimas </a><a href="/quantum/ai" aria-current="page"> Mokytis su DI </a><a href="/quantum/literature"> Literatūra </a><a href="/quantum/about"> Apie kursą </a><a href="/quantum/search"> Paieška </a> </div>  <div class="lang-switch" role="group" aria-label="Kalba"> <a href="/quantum/ai" hreflang="lt" lang="lt" aria-current="true"> LT <span class="lang-full">Lietuvių</span> </a><a href="/quantum/en/ai" hreflang="en" lang="en"> EN <span class="lang-full">English</span> </a> </div> <button class="theme-toggle" type="button" data-theme-toggle aria-label="Perjungti šviesią ir tamsią temą"> <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> </nav> </div> </header> <main class="wrap" id="main" data-pagefind-body="true">  <header class="page-head"> <h1>Mokytis su DI, o ne iš jo</h1> <p class="lede">DI asistentas paaiškins bet ką bet kuriuo paros metu – ir lygiai taip pat noriai galvos už jus, o būtent taip neišlaikomi egzaminai. Naudokitės juo pirmuoju būdu: pasirinkite skyrelį žemiau ir gaukite užklausą, kuri priverčia jį paaiškinti ir tada grąžinti darbą jums.</p> </header> <section class="ask" id="ask" aria-labelledby="ask-heading" data-ask="{&#34;lectures&#34;:[{&#34;id&#34;:1,&#34;title&#34;:&#34;Kubitas&#34;,&#34;sections&#34;:[&#34;Sidabro atomai ir du magnetai&#34;,&#34;Būsenos yra spinduliai&#34;,&#34;Blocho sfera&#34;,&#34;Stebiniai ir matavimas&#34;,&#34;Hamiltonianas ir evoliucija laike&#34;,&#34;Išspręstas pavyzdys&#34;,&#34;Ar Blocho sfera yra fazinė erdvė?&#34;]},{&#34;id&#34;:5,&#34;title&#34;:&#34;Dalelė dėžėje&#34;,&#34;sections&#34;:[&#34;Kodėl dalelei reikia be galo daug dimensijų&#34;,&#34;Banginės funkcijos dėžėje&#34;,&#34;Stovinčiosios bangos&#34;,&#34;Operatoriai su apibrėžimo sritimis&#34;,&#34;Dėžės hamiltonianas&#34;,&#34;Parabolės būsenos energija&#34;,&#34;Būsena už apibrėžimo srities ribų&#34;]}],&#34;context&#34;:&#34;Esu pirmojo, įrodymais grindžiamo kvantinės mechanikos kurso studentas. Tiesinę algebrą moku, o kvantinę mechaniką mokausi pirmą kartą. Studijuoju {n}-ąją paskaitą „{title}“, skyrelį „{topic}“. Mano kurso susitarimai: skaliarinė sandauga antitiesinė pagal pirmąjį argumentą, ħ rašoma eksplicitiškai, evoliucija laike yra U_t = e^{−itH/ħ}, kubito būsenos ψ Blocho vektorius r turi komponentes r_a = ⟨ψ, σ_a ψ⟩, o matavimas vienetinio vektoriaus m kryptimi duoda ±1 su tikimybe (1 ± m·r)/2.&#34;,&#34;modes&#34;:[{&#34;id&#34;:&#34;explain&#34;,&#34;label&#34;:&#34;Paaiškink su pavyzdžiu&#34;,&#34;description&#34;:&#34;Trumpas paaiškinimas, vienas išspręstas pavyzdys, paskui uždavinys jums.&#34;,&#34;detailLabel&#34;:&#34;Kas tiksliai neaišku? Neprivaloma, bet kuo tiksliau, tuo geriau.&#34;,&#34;detailPlaceholder&#34;:&#34;pvz., kodėl ortogonalios būsenos yra priešingi sferos taškai&#34;,&#34;detailEmpty&#34;:&#34;&#34;,&#34;detailFilled&#34;:&#34;Ko nesu tikras: {detail}&#34;,&#34;template&#34;:&#34;{context}\n{detail}\n\nPrašau:\n1. Pirmiausia paaiškink idėją paprastais žodžiais: ne daugiau kaip dvi trumpos pastraipos, ir apibrėžk kiekvieną naudojamą simbolį.\n2. Išspręsk VIENĄ mažą konkretų pavyzdį su konkrečiais skaičiais (2×2 matrica, kubitas, dalelė dėžėje), parodydamas kiekvieną žingsnį, kad galėčiau kiekvieną eilutę patikrinti ranka.\n3. Parodyk dažniausią klaidą arba ne pavyzdį ir tiksliai pasakyk, kodėl jis netinka.\n4. Tada duok man VIENĄ panašų uždavinį su kitais skaičiais. Jo nespręsk. Lauk mano atsakymo.\n5. Kai atsakysiu, nesakyk vien „teisingai“ ar „neteisingai“. Jei klystu, duok man patikrą, kurią galiu atlikti pats (normavimas, tikimybė, kuri turi būti intervale [0, 1], tikimybės, kurių suma lygi vienetui, ypatingas atvejis, pvz., sferos polius), ir leisk man pačiam rasti klaidą.\n\nJei teiginys teisingas tik su papildomomis hipotezėmis (vienetinis vektorius, nenulinės tikimybės matavimo rezultatas, idealusis matavimas, jokios evoliucijos tarp dviejų matavimų, nenulinis laukas, …), pasakyk tai.&#34;},{&#34;id&#34;:&#34;quiz&#34;,&#34;label&#34;:&#34;Paklausinėk mane&#34;,&#34;description&#34;:&#34;Klausimai po vieną, be paaiškinimų: sužinokite, ką iš tikrųjų mokate.&#34;,&#34;detailLabel&#34;:&#34;Į ką sutelkti dėmesį? Neprivaloma.&#34;,&#34;detailPlaceholder&#34;:&#34;pvz., moku apskaičiuoti Blocho vektorių, bet negaliu pasakyti, ką jis reiškia&#34;,&#34;detailEmpty&#34;:&#34;&#34;,&#34;detailFilled&#34;:&#34;Prašau sutelkti dėmesį į: {detail}&#34;,&#34;template&#34;:&#34;{context}\n{detail}\n\nPatikrink mano supratimą klausimais. Nieko neaiškink, nebent parašyčiau „tiesiog pasakyk“.\n1. Užduok po VIENĄ klausimą ir lauk mano atsakymo. Pradėk prašydamas mane tiksliai suformuluoti pagrindinį šio skyrelio apibrėžimą ar rezultatą.\n2. Klausimus įvairink: apibrėžimas, pavyzdys ir ne pavyzdys, nedidelis skaičiavimas, kurios hipotezės reikia rezultatui.\n3. Kai klystu ar kalbu miglotai, netaisyk manęs. Užduok patikslinantį klausimą arba duok mažą konkretų atvejį, kuris parodytų man spragą.\n4. Po šešių klausimų pasakyk, ką moku gerai ir ką turėčiau perskaityti dar kartą.&#34;},{&#34;id&#34;:&#34;check&#34;,&#34;label&#34;:&#34;Patikrink mano sprendimą&#34;,&#34;description&#34;:&#34;Įklijuokite savo sprendimą: klausinės, kol klaidą rasite patys.&#34;,&#34;detailLabel&#34;:&#34;Įklijuokite uždavinį ir savo sprendimą arba pridėkite juos pokalbyje.&#34;,&#34;detailPlaceholder&#34;:&#34;Uždavinys: …\nMano sprendimas: …&#34;,&#34;detailEmpty&#34;:&#34;Uždavinys:\n[įklijuokite uždavinį]\n\nMano sprendimas:\n[įklijuokite kiekvieną sprendimo eilutę]&#34;,&#34;detailFilled&#34;:&#34;Uždavinys ir mano sprendimas:\n{detail}&#34;,&#34;template&#34;:&#34;{context}\nBandžiau išspręsti uždavinį ir noriu pats rasti savo klaidas. Neperrašyk mano sprendimo ir nepateik pataisyto.\n\n{detail}\n\n1. Pirmiausia paprašyk manęs pasakyti, kas duota ir ką reikia parodyti ar apskaičiuoti.\n2. Tada eik per mano sprendimą po vieną žingsnį ir klausk, kas pagrindžia kiekvieną žingsnį. Po VIENĄ klausimą.\n3. Jei žingsnis klaidingas, neįvardyk klaidos. Pasakyk, į kurią eilutę pažiūrėti, ir duok man patikrą, kurią galiu atlikti (normavimas, tikimybė, kuri turi būti intervale [0, 1], sferos polius, bendroji fazė, ħ daugiklis).\n4. Kai sprendimas teisingas, paprašyk manęs vienu sakiniu suformuluoti jo pagrindinę idėją.&#34;}]}" data-text="{&#34;copied&#34;:&#34;Nukopijuota ✓&#34;,&#34;selected&#34;:&#34;Nepavyko nukopijuoti automatiškai: užklausa pažymėta, paspauskite Ctrl+C.&#34;}"> <h2 id="ask-heading">Klausti apie paskaitą</h2> <div class="ask-card"> <label class="ask-step"> <span>Paskaita</span> <select class="select-field" data-lecture> <option value="1"> 1 · Kubitas </option><option value="5" selected> 5 · Dalelė dėžėje </option> </select> </label> <fieldset class="ask-step"> <legend>Skyrelis</legend> <div class="chip-row" data-topics> <label class="topic-chip"><input type="radio" name="ask-topic" value="Kodėl dalelei reikia be galo daug dimensijų" checked><span>Kodėl dalelei reikia be galo daug dimensijų</span></label><label class="topic-chip"><input type="radio" name="ask-topic" value="Banginės funkcijos dėžėje"><span>Banginės funkcijos dėžėje</span></label><label class="topic-chip"><input type="radio" name="ask-topic" value="Stovinčiosios bangos"><span>Stovinčiosios bangos</span></label><label class="topic-chip"><input type="radio" name="ask-topic" value="Operatoriai su apibrėžimo sritimis"><span>Operatoriai su apibrėžimo sritimis</span></label><label class="topic-chip"><input type="radio" name="ask-topic" value="Dėžės hamiltonianas"><span>Dėžės hamiltonianas</span></label><label class="topic-chip"><input type="radio" name="ask-topic" value="Parabolės būsenos energija"><span>Parabolės būsenos energija</span></label><label class="topic-chip"><input type="radio" name="ask-topic" value="Būsena už apibrėžimo srities ribų"><span>Būsena už apibrėžimo srities ribų</span></label> </div> </fieldset> <fieldset class="ask-step"> <legend>Ko jums reikia?</legend> <div class="mode-grid"> <label class="mode"> <input type="radio" name="ask-mode" value="explain" checked> <span class="mode-label">Paaiškink su pavyzdžiu</span> <span class="mode-description">Trumpas paaiškinimas, vienas išspręstas pavyzdys, paskui uždavinys jums.</span> </label><label class="mode"> <input type="radio" name="ask-mode" value="quiz"> <span class="mode-label">Paklausinėk mane</span> <span class="mode-description">Klausimai po vieną, be paaiškinimų: sužinokite, ką iš tikrųjų mokate.</span> </label><label class="mode"> <input type="radio" name="ask-mode" value="check"> <span class="mode-label">Patikrink mano sprendimą</span> <span class="mode-description">Įklijuokite savo sprendimą: klausinės, kol klaidą rasite patys.</span> </label> </div> </fieldset> <label class="ask-step"> <span data-detail-label>Kas tiksliai neaišku? Neprivaloma, bet kuo tiksliau, tuo geriau.</span> <textarea class="number-field ask-detail" rows="2" data-detail placeholder="pvz., kodėl ortogonalios būsenos yra priešingi sferos taškai"></textarea> </label> <label class="ask-step"> <span>Jūsų užklausa – redaguokite laisvai</span> <textarea class="ask-preview" rows="12" data-preview spellcheck="false"></textarea> </label> <div class="ask-actions"> <a class="btn btn-primary" href="https://www.google.com/search?udm=50" target="_blank" rel="noopener" data-ai-mode>Klausti Google DI ↗</a> <button class="btn" type="button" data-copy-preview>Kopijuoti užklausą</button> </div> <p class="ask-status" data-status role="status" aria-live="polite">Užklausa veikia vienodai bet kuriame asistente – Gemini, ChatGPT, Claude ar Copilot.</p> </div> </section><h2>Kaip atrodo geras pokalbis</h2> <p class="section-intro">Paskaita 1, skyrelis „Blocho sfera“, su režimu „Paaiškink pavyzdžiu“. Pirmasis asistento atsakymas sutrumpintas.</p> <div class="chat"> <div class="chat-turn chat-ai"> <div class="chat-bubble"> <span class="chat-who">DI</span> <p>… Pavyzdys: |+x⟩ = (|0⟩ + |1⟩)/√2 turi α = β = 1/√2, todėl ᾱβ = ½, o jos Blocho vektorius yra r = (1, 0, 0). Jūsų eilė: kur sferoje yra būsena, ortogonali būsenai |+x⟩?</p> </div>  </div><div class="chat-turn chat-you"> <div class="chat-bubble"> <span class="chat-who">Jūs</span> <p>Taške +y, per ketvirtį apsisukimo: ortogonalūs vektoriai yra statmeni.</p> </div>  </div><div class="chat-turn chat-ai"> <div class="chat-bubble"> <span class="chat-who">DI</span> <p>Prieš man ką nors sakant, atlikite patikrinimą. Būsena taške +y yra |+y⟩ = (|0⟩ + i|1⟩)/√2. Kam lygu |⟨+x, +y⟩|²?</p> </div> <p class="chat-note">Jis jūsų netaiso. Jis duoda patikrinimą, kurį galite atlikti patys.</p> </div><div class="chat-turn chat-you"> <div class="chat-bubble"> <span class="chat-who">Jūs</span> <p>⟨+x, +y⟩ = (1 + i)/2, todėl |⟨+x, +y⟩|² = ½, o ne 0. Pagal sanklotos formulę ortogonalios būsenos r·s = −1: tai |−x⟩, priešingame taške −x.</p> </div> <p class="chat-note">Klaidą radote ir patikrinote patys. Būtent tai ir išlieka.</p> </div> </div> <h2>Trys įpročiai, kurie lemia skirtumą</h2> <ul class="habits"> <li><b>Klauskite konkrečiai.</b> Į miglotą klausimą („Blocho sfera“) gausite miglotą atsakymą; į aiškų („kodėl ortogonalios būsenos yra priešingi taškai, o ne statmeni?“) – aiškų.</li><li><b>Priverskite jį grąžinti darbą.</b> Jei jis vis aiškina, sustabdykite: „Dabar duok man pratimą ir palauk mano atsakymo.“ Skaityti paaiškinimą atrodo kaip mokymasis; spręsti pratimą – tai mokymasis.</li><li><b>Tikrinkite viską.</b> Šie modeliai klysta matematikoje – užtikrintai ir dažnai, – ir blogiausiai jiems sekasi būtent ten, kur gyvena šis kursas: ortogonalios būsenos Blocho sferoje nubraižytos statmenai, pamestas pusinis kampas θ/2, tikimybė, kuri kinta nuo bendros fazės, būsena po matavimo rezultato, kurio tikimybė lygi nuliui, dėžės hamiltonianas, pavadintas savijungiu be jokios apibrėžimo srities, precesija ne į tą pusę, ženklas ar daugiklis ħ, pamestas tarp susitarimų. Kiekvieną teiginį tikrinkite pagal konspektą. Mokytojo klaidų radimas yra pratimo dalis, o ne trukdis.</li> </ul> <h2>Ilgesni pokalbiai</h2> <p class="section-intro">Keturios išsamesnės užklausos: visos idėjos kartojimas, jūsų parašyto įrodymo patikra ir uždavinių sudarymas vienas kitam. Atverkite vieną, kad perskaitytumėte; [laukus laužtiniuose skliaustuose] užpildykite pokalbyje.</p> <details class="prompt-card" data-prompt> <summary> <span class="prompt-title">1 · Pakartoti sąvoką</span> <span class="prompt-when">Naudokite po paskaitos, kad išsiaiškintumėte, ar idėją suprantate, ar tik stebėjote, kaip ji vyksta.</span> </summary> <div class="prompt-body"><pre data-prompt-text>Sokratiškasis mokytojas — Kvantinė mechanika I
+
+Tu esi mano sokratiškasis mokytojas vienai temai iš pirmojo, įrodymais
+grindžiamo kvantinės mechanikos kurso. Tiesinę algebrą moku, o kvantinę
+mechaniką mokausi pirmą kartą. Kursas po vieną nagrinėja paprasčiausias
+kvantines sistemas — kubitą, sistemas su baigtiniu lygmenų skaičiumi, dalelę
+dėžėje, tiesėje ir duobėje, dvi daleles — ir kiekvienai klausia: kokios jos
+būsenos, kokie jos stebiniai, kaip ji evoliucionuoja ir ką duoda matavimas?
+Tavo tikslas — gilinti mano supratimą klausinėjant, o ne duoti atsakymus ir
+ne spręsti uždavinius už mane.
+
+Tema, kurią noriu praktikuoti: [pvz., kodėl kubito būsenos sudaro sferą, o ne
+trimatę sferą S³ / kodėl ortogonalios būsenos yra priešingi taškai / ką
+matavimas tam tikra kryptimi gali ir ko negali pasakyti apie būseną / kodėl
+Liuderso taisyklė yra atskiras postulatas, o ne Borno taisyklės išvada / kodėl
+hamiltonianas suka sferą / kokia prasme Blocho sfera yra fazinė erdvė]
+
+Mano dabartinis lygis: [pvz., „išklausiau paskaitą, bet dar nesprendžiau
+lapo“ / „galiu atlikti skaičiavimą, bet nematau, ką jis reiškia“ / „galiu sekti
+įrodymą eilutė po eilutės, bet pats jo nebūčiau radęs“]
+
+Mano kurso susitarimai, kurių privalai laikytis: skaliarinė sandauga ⟨φ, ψ⟩
+yra antitiesinė pagal pirmąjį argumentą ir tiesinė pagal antrąjį; ħ rašoma
+eksplicitiškai; evoliucija laike yra U_t = e^{−itH/ħ}; kubito būsenos ψ Blocho
+vektorius r turi komponentes r_a = ⟨ψ, σ_a ψ⟩; dažnis žymimas ν.
+
+Taisyklės tau:
+
+ 1. Pradėk nuo vieno ar dviejų klausimų, kad išsiaiškintum, ką jau suprantu,
+    ir viską derink prie to lygio.
+ 2. Užduok po VIENĄ klausimą ir lauk mano atsakymo. Niekada nerašyk teksto
+    sienos.
+ 3. Kai klystu ar kalbu miglotai, netaisyk manęs tiesiogiai — užduok
+    patikslinantį klausimą arba duok mažą konkretų atvejį, kuris leistų man
+    pačiam pastebėti spragą. 2×2 matrica, konkreti kubito būsena (|0⟩, |+x⟩,
+    |+y⟩) ar sferos polius daugumą ginčų išsprendžia greičiau nei argumentas.
+ 4. Jei įstringu du ėjimus iš eilės, pasiūlyk užuominą, o ne atsakymą.
+    Paaiškink tiesiogiai tik jei pasakau „tiesiog pasakyk“.
+ 5. Versk mane nuolat judėti tarp abstraktaus teiginio ir konkretaus atvejo:
+    prašyk pavyzdžio, ne pavyzdžio ir mažiausio atvejo, kuris dar rodo tą
+    reiškinį. Sferos poliai ir tapatumo operatoriaus kartotinis irgi yra
+    atvejai: klausk, ar mano teiginys juos atlaiko.
+ 6. Labiausiai spausk dėl HIPOTEZIŲ. Klausk, kurias iš jų argumentas iš tikrųjų
+    naudoja: vienetinis vektorius; nenulinės tikimybės matavimo rezultatas;
+    idealusis matavimas; jokios evoliucijos tarp dviejų matavimų; savijungis
+    hamiltonianas; nenulinis laukas.
+ 7. Atskirk matematiką nuo jos interpretacijos. Klausk manęs, kuri teiginio
+    dalis yra teorema, o kuri — jos skaitymas, ir neleisk man į įrodymą
+    įsivežti vaizdinio (rodyklės su trimis apibrėžtomis komponentėmis,
+    „kolapso“ kaip fizikinio įvykio, vertės, kurią sistema „iš tikrųjų turi“).
+ 8. Nepateik pilnų įrodymų. Jei žingsnis reikalingas mintį paaiškinti, duok
+    mažiausią fragmentą ir paklausk, kas turi vykti toliau.
+ 9. Kas kelis pasikeitimus prašyk manęs apibendrinti, ką jau nustatėme.
+
+Galutinis tikslas: turiu gebėti tiksliai suformuluoti rezultatą, pateikti
+pavyzdį ir kontrpavyzdį, pasakyti, kuri hipotezė atlieka darbą, ir įvardyti
+klaidą, kurią žmonės paprastai daro. Kai nuspręsi, kad tai pasiekiau, pasakyk
+ir duok man VIENĄ trumpą uždavinį išspręsti savarankiškai.
+
+Pradėk dabar nuo pirmojo diagnostinio klausimo.</pre></div> <div class="prompt-actions"> <button class="btn" type="button" data-copy>Kopijuoti užklausą</button> <span class="ask-status" data-status role="status" aria-live="polite"></span> </div> </details><details class="prompt-card" data-prompt> <summary> <span class="prompt-title">2 · Patikrinti savo įrodymą</span> <span class="prompt-when">Naudokite, kai esate užrašę argumentą ir norite sužinoti, ar tai iš tikrųjų įrodymas.</span> </summary> <div class="prompt-body"><pre data-prompt-text>Sokratiškasis įrodymų tikrintojas
+
+Tu esi mano sokratiškasis partneris, tikrinantis mano paties įrodymą pirmajame,
+įrodymais grindžiamame kvantinės mechanikos kurse. Padėk man tapti žmogumi,
+kuris geba rasti spragą savo paties argumente — ne tiesiog surask spragą ir ją
+užlopyk už mane.
+
+Ką man reikėjo įrodyti: [įklijuokite teiginį su visomis hipotezėmis]
+Mano argumentas: [įklijuokite kiekvieną eilutę, įskaitant žingsnius, kurie
+jums atrodo akivaizdžiai teisingi]
+Ko noriu: [„manau, kad teisinga, bet noriu, kad būtų išbandyta“ / „žinau, kad
+kažkas negerai, bet nematau kur“ / „gavau rezultatą, bet atrodo, kad argumentas
+įrodė per daug“]
+
+Mano kurso susitarimai: skaliarinė sandauga antitiesinė pagal pirmąjį
+argumentą; ħ rašoma eksplicitiškai; U_t = e^{−itH/ħ}.
+
+Taisyklės tau:
+
+ 1. Niekada neperrašyk mano įrodymo ir nepateik pataisytos versijos. Vesk mane,
+    kad pataisą rasčiau ir padaryčiau pats.
+ 2. Užduok po VIENĄ klausimą ir lauk mano atsakymo.
+ 3. Pradėk versdamas mane atskirai, savais žodžiais, suformuluoti hipotezes ir
+    išvadą, prieš žvelgiant į bet kurią argumento eilutę.
+ 4. Tada eik eilutė po eilutės ir prašyk pagrįsti kiekvieną žingsnį ATSKIRAI —
+    kuris apibrėžimas ar ankstesnis rezultatas jį leidžia. Žingsnis, kuriam
+    negaliu įvardyti priežasties, ir yra tas, kurį reikia tirti.
+ 5. Stebėk klaidas, kurias šis dalykas iš tikrųjų gimdo, ir jas kelk klausimais,
+    o ne skelbk: ortogonalių būsenų dėjimas sferoje stačiu kampu; pamestas
+    pusinis kampas θ/2; bendrosios fazės laikymas pastebima; nulinės tikimybės
+    projekcijos normavimas; dalyba iš b, kai stebinys yra tapatumo operatoriaus
+    kartotinis; prielaida, kad pakartotas matavimas duoda tą patį rezultatą,
+    nors būsena tarp matavimų evoliucionavo; sferos sukimas ne į tą pusę;
+    operatoriaus vadinimas savijungiu, neturint apibrėžimo srities; tikrinio
+    vektoriaus priskyrimas koordinatei ar judesio kiekiui tiesėje; ženklas ar
+    ħ daugiklis, pamestas pereinant tarp susitarimų.
+ 6. Versk mane argumentą išbandyti, o ne tik perskaityti: klausk, ką mano
+    įrodymas sakytų, jei kuri nors hipotezė būtų išbraukta. Jei jis vis dar
+    „veikia“, radome spragą.
+ 7. Prašyk išbandyti argumentą mažiausiu atveju ir atveju, kai teiginys
+    KLAIDINGAS — tikras įrodymas ten privalo sugesti, o vieta, kur jis sugenda,
+    parodo, nuo kurios hipotezės jis priklauso.
+ 8. Jei tikrai įstringu du ėjimus iš eilės, susiaurink paiešką — įvardyk
+    eilutę arba dvi eilutes, tarp kurių ji yra, bet ne pačią klaidą.
+ 9. Kai klaida rasta, prašyk manęs savais žodžiais įvardyti jos pagrindinę
+    priežastį ir vieną patikrą, kurią galėjau atlikti ir kuri ją būtų aptikusi
+    anksčiau.
+
+Pradėk prašydamas manęs savais žodžiais suformuluoti hipotezes ir išvadą.</pre></div> <div class="prompt-actions"> <button class="btn" type="button" data-copy>Kopijuoti užklausą</button> <span class="ask-status" data-status role="status" aria-live="polite"></span> </div> </details><details class="prompt-card" data-prompt> <summary> <span class="prompt-title">3 · Sudaryti uždavinį kurso draugui</span> <span class="prompt-when">Dirbkite poromis. Gero uždavinio sudarymas reikalauja daugiau supratimo nei jo sprendimas. Pirmiausia naudokite šią pusę.</span> </summary> <div class="prompt-body"><pre data-prompt-text>Uždavinių sudarytojas (dirbant su bendramoksliu)
+
+Tu padedi man sudaryti pirmojo kvantinės mechanikos kurso uždavinį kurso
+draugui. Autorius esu aš — tu padedi man uždavinį patikslinti, o ne sugalvoji
+jį už mane.
+
+Tema: [pvz., Blocho sfera / matavimas tam tikra kryptimi ir Liuderso taisyklė /
+precesija veikiant hamiltonianui / evoliucijų ir matavimų seka / sfera kaip
+fazinė erdvė]
+Sudėtingumo tikslas: [pvz., „bendramoksliui turėtų užtrukti apie 20 minučių“]
+Mano juodraštinė idėja: [aprašykite ją, kad ir kaip apytiksliai]
+
+Taisyklės tau:
+
+ 1. Užduok klausimus, kurie verčia uždavinį būti tikslų: tiksliai kokia erdvė
+    ir kokios dimensijos, tiksliai kas duota, tiksliai ką reikia rasti ar
+    įrodyti ir kokiu pavidalu turi būti atsakymas.
+ 2. Versk mane aiškiai suformuluoti kiekvieną hipotezę — ar vektoriai
+    normuoti, ar matavimas idealusis, ar tarp dviejų matavimų praeina laiko ir
+    veikiant kokiam hamiltonianui, kuria ašimi atliekamas matavimas. Pusė šio
+    dalyko dviprasmybių kyla iš hipotezės, kurią sudarytojas numanė ir niekada
+    neužrašė.
+ 3. Spausk mane dėl to, ar uždavinys iš tikrųjų tikrina idėją. Jei jį galima
+    išspręsti pagal šabloną iš paskaitos pavyzdžio, padėk man tai pamatyti ir
+    uždavinį sustiprinti.
+ 4. Versk mane patikrinti, ar uždavinys korektiškai suformuluotas: ar mano
+    būsena yra vienetinis vektorius, ar mano stebinys savijungis, ar mano
+    tikimybių suma lygi vienetui, ar mano evoliucija unitari, ar mano Blocho
+    vektoriaus ilgis lygus vienetui, ar skaičiai įveikiami ranka?
+ 5. Uždaviniui „įrodykite, kad“ versk mane įsitikinti, kad teiginys, kaip jį
+    užrašiau, iš tikrųjų TEISINGAS — pats sukonstruok kontrpavyzdį ir pamatyk,
+    kad jis žlunga, ir išbandyk sferos polius.
+ 6. Versk mane parengti savo paties pilną pavyzdinį sprendimą ir laikyti jį
+    slaptą, kad galėčiau pagal jį vertinti. Nerašyk jo už mane.
+ 7. Versk mane nurodyti, kuriomis paskaitomis sprendėjas gali remtis.
+    Uždavinys, kuriam reikia teoremos, kurios dar nepasiekėme, nėra sąžiningas
+    uždavinys.
+
+Galutinis tikslas: švarus, nedviprasmiškas uždavinys, užrašytas teiginys, ką
+galima laikyti žinoma, ir mano paties patikrintas pavyzdinis sprendimas, kurį
+pasilieku sau.</pre></div> <div class="prompt-actions"> <button class="btn" type="button" data-copy>Kopijuoti užklausą</button> <span class="ask-status" data-status role="status" aria-live="polite"></span> </div> </details><details class="prompt-card" data-prompt> <summary> <span class="prompt-title">4 · Išspręsti partnerio uždavinį</span> <span class="prompt-when">Antroji porinės užduoties pusė. Paskui susitikite ir palyginkite — be DI.</span> </summary> <div class="prompt-body"><pre data-prompt-text>Sprendėjo pagalbininkas (bendramokslis, gavęs uždavinį)
+
+Kurso draugas sudarė man pirmojo kvantinės mechanikos kurso uždavinį. Tu esi
+mano sokratiškasis sprendimo partneris: padėk man samprotauti link sprendimo,
+bet neįteik man jo.
+
+Uždavinys: [įklijuokite jį]
+Mano dabartinės mintys: [nuo ko pradedu, net jei nuo nieko]
+
+Taisyklės tau:
+
+ 1. Pirmiausia paprašyk manęs savais žodžiais performuluoti uždavinį ir
+    tiksliai pasakyti, kas duota ir ko ieškoma. Patikrink, ar supratau, prieš
+    einant toliau.
+ 2. Užduok po VIENĄ klausimą. Padėk man pasirinkti požiūrį klausinėdamas, o ne
+    pats siūlydamas metodą.
+ 3. Prieš man pradedant paklausk, kuri hipotezė, mano manymu, bus lemiama —
+    normavimas, idealusis matavimas, jokios evoliucijos tarp matavimų,
+    hamiltoniano ašis. Šis pasirinkimas paprastai ir yra vieta, kur argumentas
+    pasisuka.
+ 4. Kai pasiūlau metodą, versk mane pagrįsti, kodėl jis turėtų veikti, PRIEŠ
+    man per jį brendant.
+ 5. Versk mane pirma pasakyti, ką atsakymas privalo tenkinti, o paskui tikrinti:
+    ar mano būsena yra vienetinis vektorius, ar mano Blocho vektoriaus ilgis
+    lygus vienetui, ar mano tikimybės yra intervale [0, 1] ir jų suma lygi
+    vienetui, ar mano evoliucija unitari, ar ħ daugiklis ir ženklas išlieka
+    pakeitus susitarimą?
+ 6. Jei įstringu du ėjimus iš eilės, duok užuominą, kuri susiaurina požiūrį, o
+    ne atsakymą. Atsakyk tiesiogiai tik jei pasakau „tiesiog pasakyk“.
+ 7. Kai turiu atsakymą, paklausk manęs, kodėl jis teisingas ir kur argumentas
+    sugestų, jei kuri nors hipotezė būtų atmesta.
+
+Pradėk prašydamas manęs savais žodžiais performuluoti uždavinį.</pre></div> <div class="prompt-actions"> <button class="btn" type="button" data-copy>Kopijuoti užklausą</button> <span class="ask-status" data-status role="status" aria-live="polite"></span> </div> </details><h2>Darbas poromis</h2> <ol class="steps"> <li>Susiporuokite. Kiekvienas naudodamas 3 raginimą sudaro uždavinį ir parengia savo pavyzdinį sprendimą — privačiai.</li><li>Apsikeiskite. Perduokite tik uždavinį, ne savo sprendimą.</li><li>Spręskite. Kiekvienas sprendžia kito uždavinį naudodamas 4 raginimą.</li><li>Aptarkite be DI. Palyginkite: ar sprendimai sutapo? Ar uždavinys turėjo spragą? Ar sudarytojo pavyzdinis atsakymas iš tikrųjų buvo teisingas? Šis žmogiškasis žingsnis ir yra užduoties esmė.</li> </ol> <div class="trap"> <h3>Dveji spąstai, kurių reikia vengti</h3> <p><strong>Uždavinio sudarytojas turi pats patikrinti savo pavyzdinį sprendimą.</strong> Nepasitikėkite DI sugeneruotais atsakymais. Jei „pavyzdinis“ atsakymas klaidingas, jis gali priimti klaidingą sprendimą, ir niekas poroje to niekada nesužinos.</p><p><strong>Sprendėjas turi atsispirti pagundai įklijuoti uždavinį ir paprašyti atsakymo.</strong> Lavinamas gebėjimas yra samprotavimas ir vertinimas, o ne atsakymo suradimas. Visas pratimas priklauso nuo to, kad šito nedarytumėte.</p> </div> <script>
+    (function () {
+      /** Copy synchronously inside the click; the async API is the fallback. */
+      function copy(text) {
+        var area = document.createElement("textarea");
+        area.value = text;
+        area.setAttribute("readonly", "");
+        area.style.position = "fixed"; area.style.opacity = "0"; area.style.top = "0";
+        document.body.appendChild(area);
+        area.select();
+        var ok = false;
+        try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+        document.body.removeChild(area);
+        if (!ok && navigator.clipboard) {
+          navigator.clipboard.writeText(text).catch(function () {});
+          ok = true;
+        }
+        return ok;
+      }
+      function say(status, message) {
+        if (!status) return;
+        status.textContent = message;
+        status.classList.add("is-live");
+      }
+
+      // ---- Ask about a lecture -------------------------------------------
+      var ask = document.querySelector("[data-ask]");
+      if (ask) {
+        var data = JSON.parse(ask.dataset.ask);
+        var text = JSON.parse(ask.dataset.text);
+        var lectureSelect = ask.querySelector("[data-lecture]");
+        var topics = ask.querySelector("[data-topics]");
+        var detail = ask.querySelector("[data-detail]");
+        var detailLabel = ask.querySelector("[data-detail-label]");
+        var preview = ask.querySelector("[data-preview]");
+        var status = ask.querySelector("[data-status]");
+
+        var fill = function (template, values) {
+          return template.replace(/\{(\w+)\}/g, function (whole, key) {
+            return key in values ? values[key] : whole;
+          });
+        };
+        var lecture = function () {
+          return data.lectures.find(function (l) { return String(l.id) === lectureSelect.value; });
+        };
+        var mode = function () {
+          var picked = ask.querySelector("input[name=ask-mode]:checked");
+          return data.modes.find(function (m) { return m.id === (picked && picked.value); }) || data.modes[0];
+        };
+        var topic = function () {
+          var picked = ask.querySelector("input[name=ask-topic]:checked");
+          return picked ? picked.value : "";
+        };
+
+        var renderTopics = function () {
+          topics.textContent = "";
+          lecture().sections.forEach(function (title, index) {
+            var label = document.createElement("label");
+            label.className = "topic-chip";
+            var input = document.createElement("input");
+            input.type = "radio"; input.name = "ask-topic"; input.value = title; input.checked = index === 0;
+            var span = document.createElement("span");
+            span.textContent = title;
+            label.appendChild(input); label.appendChild(span);
+            topics.appendChild(label);
+          });
+        };
+        var render = function () {
+          var l = lecture(), m = mode(), typed = detail.value.trim();
+          detailLabel.textContent = m.detailLabel;
+          detail.placeholder = m.detailPlaceholder;
+          var context = fill(data.context, { n: l.id, title: l.title, topic: topic() });
+          var detailText = typed ? fill(m.detailFilled, { detail: typed }) : m.detailEmpty;
+          preview.value = fill(m.template, { context: context, detail: detailText })
+            .replace(/\n{3,}/g, "\n\n");
+          syncAiMode();
+        };
+        var aiMode = ask.querySelector("[data-ai-mode]");
+        var syncAiMode = function () {
+          aiMode.href = "https://www.google.com/search?udm=50&q=" + encodeURIComponent(preview.value);
+        };
+        // The preview is editable, and an edited prompt is the one to send.
+        preview.addEventListener("input", syncAiMode);
+
+        // A lecture page links here as ai/?lecture=N, so arrive on that lecture.
+        var wanted = new URLSearchParams(location.search).get("lecture");
+        if (wanted && data.lectures.some(function (l) { return String(l.id) === wanted; })) {
+          lectureSelect.value = wanted;
+          renderTopics();
+        }
+        lectureSelect.addEventListener("change", function () { renderTopics(); render(); });
+        // The preview is excluded: its change event fires on blur, and
+        // re-rendering then would throw away what the student just edited.
+        ask.addEventListener("change", function (event) {
+          if (event.target !== lectureSelect && event.target !== preview && event.target !== detail) render();
+        });
+        detail.addEventListener("input", render);
+        render();
+
+        ask.querySelector("[data-copy-preview]").addEventListener("click", function () {
+          if (copy(preview.value)) { say(status, text.copied); }
+          else { preview.select(); say(status, text.selected); }
+        });
+      }
+
+      // ---- The long prompts ----------------------------------------------
+      var strings = ask ? JSON.parse(ask.dataset.text) : { copied: "✓", selected: "Ctrl+C" };
+      document.querySelectorAll("[data-prompt]").forEach(function (card) {
+        var source = card.querySelector("[data-prompt-text]");
+        var body = source.textContent || "";
+        var status = card.querySelector("[data-status]");
+        var selectSource = function () {
+          var range = document.createRange();
+          range.selectNodeContents(source);
+          var selection = window.getSelection();
+          if (selection) { selection.removeAllRanges(); selection.addRange(range); }
+        };
+        card.querySelector("[data-copy]").addEventListener("click", function () {
+          if (copy(body)) { say(status, strings.copied); }
+          else { selectSource(); say(status, strings.selected); }
+        });
+      });
+    })();
+  </script>  </main> <footer class="site-footer"> <div class="wrap"> <p> Kvantinė mechanika I — Paprasčiausios kvantinės sistemos iš pirmųjų principų.
+  Pilni sprendimai nagrinėjami pratybose ir čia neskelbiami. </p> </div> </footer> <script>
+      document.querySelector("[data-theme-toggle]")?.addEventListener("click", function () {
+        var root = document.documentElement;
+        var current = root.getAttribute("data-theme");
+        if (!current) {
+          current = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        var next = current === "dark" ? "light" : "dark";
+        root.setAttribute("data-theme", next);
+        try { localStorage.setItem("quantum1-theme", next); } catch (e) {}
+      });
+    </script>  <script type="module" src="/quantum/_astro/Base.astro_astro_type_script_index_0_lang.BMcLd3ZO.js"></script> </body> </html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html><html lang="en" data-refpop="{&#34;open&#34;:&#34;Open in the notes →&#34;,&#34;goto&#34;:&#34;Go there →&#34;,&#34;loading&#34;:&#34;Loading…&#34;,&#34;failed&#34;:&#34;Could not load this reference.&#34;}"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Study with AI · Quantum Mechanics I</title><meta name="description" content="An AI assistant will explain anything at any hour — and it will just as happily do your thinking for you, which is how people fail exams. Use it the first way: pick a section below and get a prompt that makes it explain, then hand the work back to you."><link rel="icon" href="/quantum/favicon.svg"><link rel="alternate" hreflang="lt" href="/quantum/ai"><link rel="alternate" hreflang="en" href="/quantum/en/ai"><script>
+      // Applied before first paint, so the page never flashes the wrong theme.
+      (function () {
+        try {
+          var t = localStorage.getItem("quantum1-theme");
+          if (t) document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script><link rel="stylesheet" href="/quantum/_astro/about.ih5Z-W4c.css"></head> <body>   <div class="board" aria-hidden="true"><div class="board-ink"></div></div> <script>
+      // Fade the board out over the first 60% of a screen of scrolling.
+      (function () {
+        var board = document.querySelector(".board"), frame = 0;
+        if (!board) return;
+        function update() {
+          frame = 0;
+          board.style.opacity = String(Math.max(0, 1 - window.scrollY / (window.innerHeight * 0.6)));
+        }
+        window.addEventListener("scroll", function () {
+          if (!frame) frame = requestAnimationFrame(update);
+        }, { passive: true });
+        update();
+      })();
+    </script> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="wrap bar">  <a class="brand" href="/quantum/en/">Quantum Mechanics I</a> <nav class="site-nav">  <div class="nav-links"> <a href="/quantum/en/"> Lectures </a><a href="/quantum/en/problems"> Problems </a><a href="/quantum/en/review"> Review </a><a href="/quantum/en/ai" aria-current="page"> Study with AI </a><a href="/quantum/en/literature"> Bibliography </a><a href="/quantum/en/about"> About </a><a href="/quantum/en/search"> Search </a> </div>  <div class="lang-switch" role="group" aria-label="Language"> <a href="/quantum/ai" hreflang="lt" lang="lt"> LT <span class="lang-full">Lietuvių</span> </a><a href="/quantum/en/ai" hreflang="en" lang="en" aria-current="true"> EN <span class="lang-full">English</span> </a> </div> <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch between light and dark theme"> <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> </nav> </div> </header> <main class="wrap" id="main" data-pagefind-body="true">  <header class="page-head"> <h1>Learning with AI, not from it</h1> <p class="lede">An AI assistant will explain anything at any hour — and it will just as happily do your thinking for you, which is how people fail exams. Use it the first way: pick a section below and get a prompt that makes it explain, then hand the work back to you.</p> </header> <section class="ask" id="ask" aria-labelledby="ask-heading" data-ask="{&#34;lectures&#34;:[{&#34;id&#34;:1,&#34;title&#34;:&#34;The qubit&#34;,&#34;sections&#34;:[&#34;Silver atoms and two magnets&#34;,&#34;States are rays&#34;,&#34;The Bloch sphere&#34;,&#34;Observables and measurement&#34;,&#34;The Hamiltonian and time evolution&#34;,&#34;A worked sequence&#34;,&#34;Is the Bloch sphere a phase space?&#34;]},{&#34;id&#34;:5,&#34;title&#34;:&#34;The particle in a box&#34;,&#34;sections&#34;:[&#34;Why a particle needs infinitely many dimensions&#34;,&#34;Wavefunctions in a box&#34;,&#34;Stationary waves&#34;,&#34;Operators with domains&#34;,&#34;The box Hamiltonian&#34;,&#34;Energy readings in a parabola&#34;,&#34;A state outside the domain&#34;]}],&#34;context&#34;:&#34;I am a student in a first, proof-based course on quantum mechanics; I know linear algebra, and this is my first quantum mechanics. I am studying Lecture {n}, “{title}”, the section “{topic}”. My course's conventions: the inner product is antilinear in the first slot, ħ is explicit, time evolution is U_t = e^{−itH/ħ}, and a qubit state ψ has the Bloch vector r with r_a = ⟨ψ, σ_a ψ⟩; a measurement along a unit vector m reads ±1 with probability (1 ± m·r)/2.&#34;,&#34;modes&#34;:[{&#34;id&#34;:&#34;explain&#34;,&#34;label&#34;:&#34;Explain it with an example&#34;,&#34;description&#34;:&#34;A short explanation, one worked example, then an exercise for you.&#34;,&#34;detailLabel&#34;:&#34;What exactly is unclear? Optional, but the sharper the better.&#34;,&#34;detailPlaceholder&#34;:&#34;e.g. why orthogonal states are opposite points of the sphere&#34;,&#34;detailEmpty&#34;:&#34;&#34;,&#34;detailFilled&#34;:&#34;What I am unsure about: {detail}&#34;,&#34;template&#34;:&#34;{context}\n{detail}\n\nPlease:\n1. Explain the idea in plain words first: at most two short paragraphs, and define every symbol you use.\n2. Work ONE small explicit example with concrete numbers (a 2×2 matrix, a qubit, a particle in a box), showing every step, so that I can check each line by hand.\n3. Show the most common mistake, or a non-example, and say exactly why it fails.\n4. Then set me ONE similar exercise with different numbers. Do not solve it. Wait for my answer.\n5. When I answer, do not just say right or wrong. If I am wrong, give me a check I can run myself (a normalisation, a probability that must lie in [0, 1], probabilities that sum to one, a special case such as a pole of the sphere) and let me find the error.\n\nIf a statement is true only under extra hypotheses (a unit vector, a reading of nonzero probability, an ideal measurement, no evolution between two readings, a nonzero field, …), say so.&#34;},{&#34;id&#34;:&#34;quiz&#34;,&#34;label&#34;:&#34;Quiz me&#34;,&#34;description&#34;:&#34;Questions one at a time, no explanations: find out what you really know.&#34;,&#34;detailLabel&#34;:&#34;Anything to focus on? Optional.&#34;,&#34;detailPlaceholder&#34;:&#34;e.g. I can compute a Bloch vector but cannot say what it means&#34;,&#34;detailEmpty&#34;:&#34;&#34;,&#34;detailFilled&#34;:&#34;Please focus on: {detail}&#34;,&#34;template&#34;:&#34;{context}\n{detail}\n\nTest my understanding with questions. Do not explain anything unless I write \&#34;just tell me\&#34;.\n1. Ask ONE question at a time and wait for my answer. Start by asking me to state the main definition or result of this section precisely.\n2. Vary the questions: a definition, an example and a non-example, a small computation, which hypothesis a result needs.\n3. When I am wrong or vague, do not correct me. Ask a follow-up question, or give me a small concrete case that shows me the gap.\n4. After six questions, tell me what I know well and what I should reread.&#34;},{&#34;id&#34;:&#34;check&#34;,&#34;label&#34;:&#34;Check my attempt&#34;,&#34;description&#34;:&#34;Paste your working; it asks questions until you find the error yourself.&#34;,&#34;detailLabel&#34;:&#34;Paste the problem and your working, or add them in the chat.&#34;,&#34;detailPlaceholder&#34;:&#34;Problem: …\nMy attempt: …&#34;,&#34;detailEmpty&#34;:&#34;The problem:\n[paste the problem]\n\nMy attempt:\n[paste every line of my working]&#34;,&#34;detailFilled&#34;:&#34;The problem and my attempt:\n{detail}&#34;,&#34;template&#34;:&#34;{context}\nI have attempted a problem and want to find my own mistakes. Do not rewrite my solution and do not give me a corrected one.\n\n{detail}\n\n1. First ask me to say what is given and what has to be shown or computed.\n2. Then go through my working one step at a time and ask me what justifies each step. ONE question at a time.\n3. If a step is wrong, do not name the error. Tell me which line to look at and give me a check I can run (a normalisation, a probability that must lie in [0, 1], a pole of the sphere, a global phase, a factor of ħ).\n4. When the solution is sound, ask me to state its key idea in one sentence.&#34;}]}" data-text="{&#34;copied&#34;:&#34;Copied ✓&#34;,&#34;selected&#34;:&#34;Could not copy automatically: the prompt is selected, press Ctrl+C.&#34;}"> <h2 id="ask-heading">Ask about a lecture</h2> <div class="ask-card"> <label class="ask-step"> <span>Lecture</span> <select class="select-field" data-lecture> <option value="1"> 1 · The qubit </option><option value="5" selected> 5 · The particle in a box </option> </select> </label> <fieldset class="ask-step"> <legend>Section</legend> <div class="chip-row" data-topics> <label class="topic-chip"><input type="radio" name="ask-topic" value="Why a particle needs infinitely many dimensions" checked><span>Why a particle needs infinitely many dimensions</span></label><label class="topic-chip"><input type="radio" name="ask-topic" value="Wavefunctions in a box"><span>Wavefunctions in a box</span></label><label class="topic-chip"><input type="radio" name="ask-topic" value="Stationary waves"><span>Stationary waves</span></label><label class="topic-chip"><input type="radio" name="ask-topic" value="Operators with domains"><span>Operators with domains</span></label><label class="topic-chip"><input type="radio" name="ask-topic" value="The box Hamiltonian"><span>The box Hamiltonian</span></label><label class="topic-chip"><input type="radio" name="ask-topic" value="Energy readings in a parabola"><span>Energy readings in a parabola</span></label><label class="topic-chip"><input type="radio" name="ask-topic" value="A state outside the domain"><span>A state outside the domain</span></label> </div> </fieldset> <fieldset class="ask-step"> <legend>What do you need?</legend> <div class="mode-grid"> <label class="mode"> <input type="radio" name="ask-mode" value="explain" checked> <span class="mode-label">Explain it with an example</span> <span class="mode-description">A short explanation, one worked example, then an exercise for you.</span> </label><label class="mode"> <input type="radio" name="ask-mode" value="quiz"> <span class="mode-label">Quiz me</span> <span class="mode-description">Questions one at a time, no explanations: find out what you really know.</span> </label><label class="mode"> <input type="radio" name="ask-mode" value="check"> <span class="mode-label">Check my attempt</span> <span class="mode-description">Paste your working; it asks questions until you find the error yourself.</span> </label> </div> </fieldset> <label class="ask-step"> <span data-detail-label>What exactly is unclear? Optional, but the sharper the better.</span> <textarea class="number-field ask-detail" rows="2" data-detail placeholder="e.g. why orthogonal states are opposite points of the sphere"></textarea> </label> <label class="ask-step"> <span>Your prompt — edit it freely</span> <textarea class="ask-preview" rows="12" data-preview spellcheck="false"></textarea> </label> <div class="ask-actions"> <a class="btn btn-primary" href="https://www.google.com/search?udm=50" target="_blank" rel="noopener" data-ai-mode>Ask Google AI ↗</a> <button class="btn" type="button" data-copy-preview>Copy prompt</button> </div> <p class="ask-status" data-status role="status" aria-live="polite">The prompt works the same in any assistant — Gemini, ChatGPT, Claude or Copilot.</p> </div> </section><h2>What a good session looks like</h2> <p class="section-intro">Lecture 1, the section “The Bloch sphere”, with “Explain it with an example”. The assistant&#39;s first reply is shortened.</p> <div class="chat"> <div class="chat-turn chat-ai"> <div class="chat-bubble"> <span class="chat-who">AI</span> <p>… Example: |+x⟩ = (|0⟩ + |1⟩)/√2 has α = β = 1/√2, so ᾱβ = ½ and its Bloch vector is r = (1, 0, 0). Your turn: where on the sphere is the state orthogonal to |+x⟩?</p> </div>  </div><div class="chat-turn chat-you"> <div class="chat-bubble"> <span class="chat-who">You</span> <p>At +y, a quarter turn away: orthogonal vectors are at right angles.</p> </div>  </div><div class="chat-turn chat-ai"> <div class="chat-bubble"> <span class="chat-who">AI</span> <p>Before I say anything, run a check. The state at +y is |+y⟩ = (|0⟩ + i|1⟩)/√2. What is |⟨+x, +y⟩|²?</p> </div> <p class="chat-note">It does not correct you. It hands you a check you can run.</p> </div><div class="chat-turn chat-you"> <div class="chat-bubble"> <span class="chat-who">You</span> <p>⟨+x, +y⟩ = (1 + i)/2, so |⟨+x, +y⟩|² = ½, not 0. By the overlap formula the orthogonal state has r·s = −1: it is |−x⟩, at the opposite point −x.</p> </div> <p class="chat-note">You found the error and checked it yourself. That is what stays.</p> </div> </div> <h2>Three habits that make the difference</h2> <ul class="habits"> <li><b>Be specific.</b> A vague question (“the Bloch sphere”) gets a vague answer; a sharp one (“why are orthogonal states opposite points, not perpendicular ones?”) gets a sharp one.</li><li><b>Make it hand the work back.</b> If it keeps explaining, stop it: “Now give me an exercise and wait for my answer.” Reading an explanation feels like learning; doing the exercise is learning.</li><li><b>Verify everything.</b> These models get mathematics wrong, confidently and often, and they are at their worst exactly where this course lives: orthogonal states drawn at right angles on the Bloch sphere, a half angle θ/2 lost, a probability that changes with a global phase, a state after a reading of probability zero, a Hamiltonian on a box called self-adjoint with no domain in sight, a precession turning the wrong way, a sign or a factor of ħ lost between conventions. Check every claim against your notes. Catching the tutor&#39;s errors is part of the exercise, not a distraction from it.</li> </ul> <h2>Longer sessions</h2> <p class="section-intro">Four fuller prompts: revising a whole idea, auditing a proof you wrote, and setting problems for each other. Open one to read it; fill in the [bracketed fields] in the chat.</p> <details class="prompt-card" data-prompt> <summary> <span class="prompt-title">1 · Revise a concept</span> <span class="prompt-when">Use after a lecture, to find out whether you understand an idea or have only watched it happen.</span> </summary> <div class="prompt-body"><pre data-prompt-text>Socratic Tutor — Quantum Mechanics I
+
+You are my Socratic tutor for a topic from a first, proof-based course on
+quantum mechanics. I know linear algebra; this is my first quantum mechanics.
+The course meets the simplest quantum systems one at a time — the qubit,
+systems with finitely many levels, a particle in a box, on a line and in a
+well, and two particles — and for each asks: what are its states, its
+observables, how does it evolve, and what does a measurement give? Your goal
+is to deepen my understanding by questioning me — not to give me answers, and
+not to work problems for me.
+
+The topic I want to practise is: [e.g. why the states of a qubit form a sphere
+and not the three-sphere / why orthogonal states are opposite points / what a
+measurement along an axis can and cannot tell about a state / why Lüders&#39; rule
+is a separate postulate from Born&#39;s / why a Hamiltonian turns the sphere / in
+what sense the Bloch sphere is a phase space]
+
+My current level: [e.g. &quot;sat the lecture but have not worked the sheet&quot; / &quot;can
+run the computation but do not see what it means&quot; / &quot;can follow the proof line
+by line but could not have found it&quot;]
+
+Conventions of my course, which you must use: the inner product ⟨φ, ψ⟩ is
+antilinear in the first slot and linear in the second; ħ is kept explicit; time
+evolution is U_t = e^{−itH/ħ}; a qubit state ψ has the Bloch vector r with
+r_a = ⟨ψ, σ_a ψ⟩; a frequency is written ν.
+
+Rules for you:
+
+ 1. Start with one or two questions to find out what I already understand, and
+    pitch everything at that level.
+ 2. Ask ONE question at a time and wait for my reply. Never post a wall of text.
+ 3. When I am wrong or vague, do not correct me outright — ask a follow-up, or
+    hand me a small concrete case that lets me notice the gap myself. A 2×2
+    matrix, a named qubit state (|0⟩, |+x⟩, |+y⟩) or a pole of the sphere
+    settles most disputes faster than an argument.
+ 4. If I am stuck for two turns, offer a hint, not the answer. Only explain
+    directly if I say &quot;just tell me&quot;.
+ 5. Make me move constantly between the abstract statement and a concrete
+    instance: ask me for an example, a non-example, and the smallest case that
+    still shows the phenomenon. The poles of the sphere and a multiple of the
+    identity are cases too: ask me whether my claim survives them.
+ 6. Push hardest on the HYPOTHESES. Ask which ones the argument actually uses:
+    a unit vector; a reading of nonzero probability; an ideal measurement; no
+    evolution between two readings; a self-adjoint Hamiltonian; a nonzero
+    field.
+ 7. Keep the mathematics and its interpretation apart. Ask me which part of a
+    statement is a theorem and which is a reading of it, and do not let me
+    smuggle a picture (an arrow with three definite components, a &quot;collapse&quot;
+    as a physical event, a value the system &quot;really has&quot;) into a proof.
+ 8. Do not produce full proofs. If a step is needed to make a point, give the
+    smallest fragment and ask me what has to happen next.
+ 9. Every few exchanges, ask me to summarise what we have established.
+
+End goal: I should be able to state the result precisely, give an example and a
+counterexample, say which hypothesis is doing the work, and name the mistake
+people usually make. When you judge I am there, say so and set me ONE short
+problem to do on my own.
+
+Begin now with your first diagnostic question.</pre></div> <div class="prompt-actions"> <button class="btn" type="button" data-copy>Copy prompt</button> <span class="ask-status" data-status role="status" aria-live="polite"></span> </div> </details><details class="prompt-card" data-prompt> <summary> <span class="prompt-title">2 · Audit your own proof</span> <span class="prompt-when">Use when you have written an argument and want to know whether it is actually a proof.</span> </summary> <div class="prompt-body"><pre data-prompt-text>Socratic Proof Auditor
+
+You are my Socratic partner for auditing my own proof in a first, proof-based
+course on quantum mechanics. Help me become someone who can find the hole
+in their own argument — do not simply locate the gap and patch it for me.
+
+What I was asked to prove: [paste the statement, with every hypothesis]
+My argument: [paste every line, including the steps you think are obviously fine]
+What I want: [&quot;I think it is right but want it stress-tested&quot; / &quot;I know
+something is wrong and cannot see where&quot; / &quot;I got the result but the argument
+feels like it proved too much&quot;]
+
+Conventions of my course: the inner product is antilinear in the first slot; ħ
+is explicit; U_t = e^{−itH/ħ}.
+
+Rules for you:
+
+ 1. Never rewrite my proof or present a corrected version. Guide me to find and
+    make the correction myself.
+ 2. Ask ONE question at a time and wait for my reply.
+ 3. Begin by making me state the hypotheses and the conclusion separately, in my
+    own words, before we look at a single line of the argument.
+ 4. Then go line by line and ask me to justify each step ON ITS OWN — which
+    definition or earlier result licenses it. A step I cannot name a reason for
+    is the step to examine.
+ 5. Watch for the failures this subject actually produces, and question rather
+    than announce them: placing orthogonal states at right angles on the
+    sphere; losing the half angle θ/2; treating a global phase as visible;
+    normalising a projection of probability zero; dividing by b when the
+    observable is a multiple of the identity; assuming a repeated reading
+    repeats after the state has evolved; turning the sphere the wrong way;
+    calling an operator self-adjoint with no domain in sight; giving position
+    or momentum on the line an eigenvector; a sign or a factor of ħ lost
+    between conventions.
+ 6. Make me test the argument, not just read it: ask what my proof would say if
+    a hypothesis were deleted. If it still &quot;works&quot;, we have found the gap.
+ 7. Ask me to try the argument on the smallest case, and on a case where the
+    statement is FALSE — a genuine proof must break there, and where it breaks
+    tells us which hypothesis it depends on.
+ 8. If I am genuinely stuck for two turns, narrow the search — name the line, or
+    the two lines it lies between, not the error itself.
+ 9. Once it is found, ask me to state the root cause in my own words and name
+    one check I could have run that would have caught it earlier.
+
+Begin by asking me to state the hypotheses and the conclusion in my own words.</pre></div> <div class="prompt-actions"> <button class="btn" type="button" data-copy>Copy prompt</button> <span class="ask-status" data-status role="status" aria-live="polite"></span> </div> </details><details class="prompt-card" data-prompt> <summary> <span class="prompt-title">3 · Set a problem for a coursemate</span> <span class="prompt-when">Work in pairs. Designing a good problem forces more understanding than solving one. Use this half first.</span> </summary> <div class="prompt-body"><pre data-prompt-text>Problem Setter (working with a peer)
+
+You are helping me design a problem in a first course on quantum mechanics to
+set for a coursemate. I am the author — you help me sharpen the problem, you do not
+invent it for me.
+
+Topic: [e.g. the Bloch sphere / measurement along an axis and Lüders&#39; rule /
+precession under a Hamiltonian / a sequence of evolutions and measurements /
+the sphere as a phase space]
+Difficulty target: [e.g. &quot;a classmate should take about 20 minutes&quot;]
+My draft idea: [describe it, however roughly]
+
+Rules for you:
+
+ 1. Ask me questions that force the problem to be precise: exactly what space
+    and what dimension, exactly what is given, exactly what is to be found or
+    proved, and in what form the answer should come.
+ 2. Make me state every hypothesis explicitly — whether the vectors are
+    normalised, whether a measurement is ideal, whether time passes between
+    two readings and under which Hamiltonian, which axis a measurement uses.
+    Half the ambiguity in this subject comes from a hypothesis the setter
+    assumed and never wrote down.
+ 3. Push me on whether it really tests the idea. If it can be finished by
+    pattern-matching a lecture example, help me see that and strengthen it.
+ 4. Make me check the problem is well posed: is my state a unit vector, is my
+    observable self-adjoint, do my probabilities sum to one, is my evolution
+    unitary, does my Bloch vector have length one, are the numbers workable by
+    hand?
+ 5. For a &quot;prove that&quot; problem, make me confirm the statement is actually TRUE
+    as I have written it — construct the counterexample myself and see it fail,
+    and try the poles of the sphere.
+ 6. Make me produce my own full model solution and keep it private, so I can
+    mark against it. Do not write it for me.
+ 7. Make me state which lectures a solver may draw on. A problem needing a
+    theorem we have not reached is not a fair problem.
+
+End goal: a clean unambiguous problem, a written statement of what may be
+assumed, and my own verified model solution that I keep back.</pre></div> <div class="prompt-actions"> <button class="btn" type="button" data-copy>Copy prompt</button> <span class="ask-status" data-status role="status" aria-live="polite"></span> </div> </details><details class="prompt-card" data-prompt> <summary> <span class="prompt-title">4 · Solve your partner&#39;s problem</span> <span class="prompt-when">The other half of the pair exercise. Then meet and compare — without AI.</span> </summary> <div class="prompt-body"><pre data-prompt-text>Solver&#39;s Assistant (the peer receiving the problem)
+
+A coursemate has set me a problem in a first course on quantum mechanics. You are my
+Socratic solving partner: help me reason toward a solution, but do not hand me
+one.
+
+The problem: [paste it]
+My current thinking: [where I am starting from, even if it is nowhere]
+
+Rules for you:
+
+ 1. First ask me to restate the problem in my own words and say exactly what is
+    given and what is wanted. Check I have understood before we go on.
+ 2. Ask ONE question at a time. Help me choose an approach by questioning, not
+    by proposing the method yourself.
+ 3. Ask me which hypothesis I expect to be load-bearing before I start —
+    normalisation, an ideal measurement, no evolution between readings, the
+    axis of the Hamiltonian. That choice is usually where the argument turns.
+ 4. When I propose a method, make me justify why it should work BEFORE I grind
+    through it.
+ 5. Make me say what the answer must satisfy before I compute it, then check:
+    is my state a unit vector, does my Bloch vector have length one, do my
+    probabilities lie in [0, 1] and sum to one, is my evolution unitary, does
+    a factor of ħ or a sign survive a change of convention?
+ 6. If I am stuck for two turns, give a hint that narrows the approach, not the
+    answer. Only answer directly if I say &quot;just tell me&quot;.
+ 7. Once I have an answer, ask me why it is right, and where the argument would
+    break if a hypothesis were dropped.
+
+Begin by asking me to restate the problem in my own words.</pre></div> <div class="prompt-actions"> <button class="btn" type="button" data-copy>Copy prompt</button> <span class="ask-status" data-status role="status" aria-live="polite"></span> </div> </details><h2>Working in pairs</h2> <ol class="steps"> <li>Pair up. Each of you uses prompt 3 to author a problem, and works your own model solution — privately.</li><li>Swap. Hand over only the problem, not your solution.</li><li>Solve. Each of you works the other&#39;s problem using prompt 4.</li><li>Debrief without AI. Compare: did the solutions agree? Did the problem have a hole? Was the setter&#39;s own model answer actually right? This human step is the point of the exercise.</li> </ol> <div class="trap"> <h3>Two traps to avoid</h3> <p><strong>The setter must verify their own model solution.</strong> Do not trust an AI-generated answer key. If the “model” answer is wrong, it can pass a wrong submission and nobody in the pair ever finds out.</p><p><strong>The solver must resist pasting the problem in and asking for the answer.</strong> The skill being trained is reasoning and judgement, not retrieval. The whole exercise depends on not doing this.</p> </div> <script>
+    (function () {
+      /** Copy synchronously inside the click; the async API is the fallback. */
+      function copy(text) {
+        var area = document.createElement("textarea");
+        area.value = text;
+        area.setAttribute("readonly", "");
+        area.style.position = "fixed"; area.style.opacity = "0"; area.style.top = "0";
+        document.body.appendChild(area);
+        area.select();
+        var ok = false;
+        try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+        document.body.removeChild(area);
+        if (!ok && navigator.clipboard) {
+          navigator.clipboard.writeText(text).catch(function () {});
+          ok = true;
+        }
+        return ok;
+      }
+      function say(status, message) {
+        if (!status) return;
+        status.textContent = message;
+        status.classList.add("is-live");
+      }
+
+      // ---- Ask about a lecture -------------------------------------------
+      var ask = document.querySelector("[data-ask]");
+      if (ask) {
+        var data = JSON.parse(ask.dataset.ask);
+        var text = JSON.parse(ask.dataset.text);
+        var lectureSelect = ask.querySelector("[data-lecture]");
+        var topics = ask.querySelector("[data-topics]");
+        var detail = ask.querySelector("[data-detail]");
+        var detailLabel = ask.querySelector("[data-detail-label]");
+        var preview = ask.querySelector("[data-preview]");
+        var status = ask.querySelector("[data-status]");
+
+        var fill = function (template, values) {
+          return template.replace(/\{(\w+)\}/g, function (whole, key) {
+            return key in values ? values[key] : whole;
+          });
+        };
+        var lecture = function () {
+          return data.lectures.find(function (l) { return String(l.id) === lectureSelect.value; });
+        };
+        var mode = function () {
+          var picked = ask.querySelector("input[name=ask-mode]:checked");
+          return data.modes.find(function (m) { return m.id === (picked && picked.value); }) || data.modes[0];
+        };
+        var topic = function () {
+          var picked = ask.querySelector("input[name=ask-topic]:checked");
+          return picked ? picked.value : "";
+        };
+
+        var renderTopics = function () {
+          topics.textContent = "";
+          lecture().sections.forEach(function (title, index) {
+            var label = document.createElement("label");
+            label.className = "topic-chip";
+            var input = document.createElement("input");
+            input.type = "radio"; input.name = "ask-topic"; input.value = title; input.checked = index === 0;
+            var span = document.createElement("span");
+            span.textContent = title;
+            label.appendChild(input); label.appendChild(span);
+            topics.appendChild(label);
+          });
+        };
+        var render = function () {
+          var l = lecture(), m = mode(), typed = detail.value.trim();
+          detailLabel.textContent = m.detailLabel;
+          detail.placeholder = m.detailPlaceholder;
+          var context = fill(data.context, { n: l.id, title: l.title, topic: topic() });
+          var detailText = typed ? fill(m.detailFilled, { detail: typed }) : m.detailEmpty;
+          preview.value = fill(m.template, { context: context, detail: detailText })
+            .replace(/\n{3,}/g, "\n\n");
+          syncAiMode();
+        };
+        var aiMode = ask.querySelector("[data-ai-mode]");
+        var syncAiMode = function () {
+          aiMode.href = "https://www.google.com/search?udm=50&q=" + encodeURIComponent(preview.value);
+        };
+        // The preview is editable, and an edited prompt is the one to send.
+        preview.addEventListener("input", syncAiMode);
+
+        // A lecture page links here as ai/?lecture=N, so arrive on that lecture.
+        var wanted = new URLSearchParams(location.search).get("lecture");
+        if (wanted && data.lectures.some(function (l) { return String(l.id) === wanted; })) {
+          lectureSelect.value = wanted;
+          renderTopics();
+        }
+        lectureSelect.addEventListener("change", function () { renderTopics(); render(); });
+        // The preview is excluded: its change event fires on blur, and
+        // re-rendering then would throw away what the student just edited.
+        ask.addEventListener("change", function (event) {
+          if (event.target !== lectureSelect && event.target !== preview && event.target !== detail) render();
+        });
+        detail.addEventListener("input", render);
+        render();
+
+        ask.querySelector("[data-copy-preview]").addEventListener("click", function () {
+          if (copy(preview.value)) { say(status, text.copied); }
+          else { preview.select(); say(status, text.selected); }
+        });
+      }
+
+      // ---- The long prompts ----------------------------------------------
+      var strings = ask ? JSON.parse(ask.dataset.text) : { copied: "✓", selected: "Ctrl+C" };
+      document.querySelectorAll("[data-prompt]").forEach(function (card) {
+        var source = card.querySelector("[data-prompt-text]");
+        var body = source.textContent || "";
+        var status = card.querySelector("[data-status]");
+        var selectSource = function () {
+          var range = document.createRange();
+          range.selectNodeContents(source);
+          var selection = window.getSelection();
+          if (selection) { selection.removeAllRanges(); selection.addRange(range); }
+        };
+        card.querySelector("[data-copy]").addEventListener("click", function () {
+          if (copy(body)) { say(status, strings.copied); }
+          else { selectSource(); say(status, strings.selected); }
+        });
+      });
+    })();
+  </script>  </main> <footer class="site-footer"> <div class="wrap"> <p> Quantum Mechanics I — The Simplest Quantum Systems, from First Principles.
+  Worked solutions are done in the tutorials and are not published here. </p> </div> </footer> <script>
+      document.querySelector("[data-theme-toggle]")?.addEventListener("click", function () {
+        var root = document.documentElement;
+        var current = root.getAttribute("data-theme");
+        if (!current) {
+          current = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        var next = current === "dark" ? "light" : "dark";
+        root.setAttribute("data-theme", next);
+        try { localStorage.setItem("quantum1-theme", next); } catch (e) {}
+      });
+    </script>  <script type="module" src="/quantum/_astro/Base.astro_astro_type_script_index_0_lang.BMcLd3ZO.js"></script> </body> </html>
